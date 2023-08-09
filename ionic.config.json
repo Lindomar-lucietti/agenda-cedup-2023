@@ -1,0 +1,7 @@
+{
+  "name": "compromisso",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
