@@ -1,16 +1,17 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
     <ion-title>Agendar Compromisso</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Cadastro</ion-title>
-    </ion-toolbar>
+      </ion-toolbar>
   </ion-header>
-
   <ion-list lines="full">
     <ion-item>
       <ion-label>Matéria</ion-label>
@@ -23,8 +24,7 @@
     <ion-item>
       <ion-label>Data e Hora</ion-label>
       <ion-input></ion-input>
-    </ion-item>
+      </ion-item>
   </ion-list>
-  <ion-button expand="full" (click)="salvar()">Salvar</ion-button>
-
-</ion-content>
+   <ion-button expand="full" (click)="salvar()">Salvar</ion-button>
+  </ion-content>
