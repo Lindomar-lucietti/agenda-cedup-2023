@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LocalStorageService } from '../local-storage.service';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
-  constructor() {}
-
+public compromissos:Array<any> = [];
+  constructor(
+    public localstorage_service:LocalStorageService
+  ) {
+   this.compromissos = this.localstorage_service.get('compromisso');
+  }
+  excluir(indice:number){
+    //console.log(indice); mostra a execucao do comando 
+    this.compromissos.splice(indice,1);
+  }
 }

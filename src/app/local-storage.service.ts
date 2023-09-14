@@ -4,10 +4,18 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LocalStorageService {
-
+public dados$:Array<any> = [];
   constructor() { }
-
-  salvar(entidade:string,dados:any){
-    localStorage.setItem(entidade,JSON.stringify(dados));
+//enviar os dados objetos transformando em string
+// estamos adicionando na lista e incluindo na lista dos dados
+//comando p/auto incremento "copia os dados antigos e adiciona novos" (this.dados$ = this.get(entidade);)
+  post(entidade:string,dados:any){
+    this.dados$ = this.get(entidade);
+    this.dados$.push(dados);
+    localStorage.setItem(entidade,JSON.stringify(this.dados$));
+  }
+// recebe os dados string transformando em objeto
+  get(entidade:string){
+    return JSON.parse(String(localStorage.getItem(entidade)));
   }
 }
