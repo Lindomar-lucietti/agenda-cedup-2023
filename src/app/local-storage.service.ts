@@ -10,7 +10,7 @@ public dados$:Array<any> = [];
 // estamos adicionando na lista e incluindo na lista dos dados
 //comando p/auto incremento "copia os dados antigos e adiciona novos" (this.dados$ = this.get(entidade);)
   post(entidade:string,dados:any){
-    this.dados$ = this.get(entidade);
+    //this.dados$ = this.get(entidade);
     this.dados$.push(dados);
     localStorage.setItem(entidade,JSON.stringify(this.dados$));
   }
