@@ -18,4 +18,9 @@ public dados$:Array<any> = [];
   get(entidade:string){
     return JSON.parse(String(localStorage.getItem(entidade)));
   }
+  del(entidade:string,indice:number){
+    this.dados$.splice(indice,1);// vai apagar um por vez
+    localStorage.setItem(entidade,JSON.stringify(this.dados$));
+  }
 }
+// os indices são os numeros de id

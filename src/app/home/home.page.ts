@@ -16,17 +16,20 @@ public compromissos:Array<any> = [];
   excluir(indice:number){
     //console.log(indice); mostra a execucao do comando 
     this.compromissos.splice(indice,1);
+    this.localstorage_service.del('compromisso', indice);// 'compromisso' é o banco, indice é o que quer excluir
   }
 
   getHora(data:string){//por parametro mandamos uma data string
    let hora = data.split("T")[1];// aqui vamos separar hora da data
   return hora;  // a hora já esta formatada não precisa mudar
   }
+  
   getData(data:string){//por parametro mandamos uma data string
     let dt = data.split("T")[0];// aqui vamos separar hora da data
     let dia = dt.split("-")[2];
     let mes = dt.split("-")[1];
     let ano = dt.split("-")[0];
-    return dia + '/' + mes '/' + ano;  // a hora já esta formatada não precisa mudar
+    return dia + '/' + mes + '/' + ano;  // a hora já esta formatada não precisa mudar
    }  
+  
 }
