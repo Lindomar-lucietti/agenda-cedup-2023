@@ -17,15 +17,18 @@
       <ion-label>Matéria</ion-label>
       <ion-input [(ngModel)]="materia" ></ion-input>
     </ion-item>
+  
     <ion-item>
       <ion-label>Descrição</ion-label>
       <ion-input [(ngModel)]="descricao" ></ion-input>
     </ion-item>
+  
     <ion-item>
-      <ion-label>Data e Hora</ion-label>
-      <ion-datetime [showDefaultButtons]="true" [(ngModel)]="datahora"></ion-datetime>
-      <ion-input></ion-input>
+      
+      <ion-datetime locate="pt-BR" [showDefaultButtons]="true" [(ngModel)]="datahora"></ion-datetime>
+      
       </ion-item>
+
   </ion-list>
    <ion-button expand="full" (click)="salvar()">Salvar</ion-button>
   </ion-content>

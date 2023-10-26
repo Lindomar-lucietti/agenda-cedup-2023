@@ -10,9 +10,12 @@ export class HomePage {
 public compromissos:Array<any> = [];
   constructor(
     public localstorage_service:LocalStorageService
-  ) {
-   this.compromissos = this.localstorage_service.get('compromisso');
+    ) {
   }
+    ionViewWillEnter(){
+      this.compromissos = this.localstorage_service.get('compromisso');   
+  }
+
   excluir(indice:number){
     //console.log(indice); mostra a execucao do comando 
     this.compromissos.splice(indice,1);

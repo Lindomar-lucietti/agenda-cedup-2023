@@ -9,7 +9,7 @@ import { LocalStorageService } from '../local-storage.service';
 export class CadastroPage implements OnInit {
   public materia:string = '';
   public descricao:string ='';
-  public datahora:string = '';
+  public datahora:string = new Date().getDate().toString();
 
   constructor(
     public localstorage_service:LocalStorageService
